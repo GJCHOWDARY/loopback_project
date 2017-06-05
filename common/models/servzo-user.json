@@ -1,0 +1,164 @@
+{
+  "name": "ServzoUser",
+  "plural": "ServzoUsers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "schema": "servzo",
+      "table": "servzo_user"
+    }
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "mysql": {
+        "columnName": "first_name",
+        "nullable": "N"
+      }
+    },
+    "lastName": {
+      "type": "string",
+      "mysql": {
+        "columnName": "last_name",
+        "nullable": "N"
+      }
+    },
+    "chargeOutRate": {
+      "type": "number",
+      "mysql": {
+        "columnName": "charge_out_rate",
+        "nullable": "N"
+      }
+    },
+    "yearlySalary": {
+      "type": "number",
+      "mysql": {
+        "columnName": "yearly_salary",
+        "nullable": "N"
+      }
+    },
+    "contactNumber": {
+      "type": "string",
+      "mysql": {
+        "columnName": "contact_number",
+        "nullable": "N"
+      }
+    },
+    "imageUrl": {
+      "type": "string",
+      "mysql": {
+        "columnName": "image_url"
+      }
+    },
+    "createdByUserId": {
+      "type": "number",
+      "mysql": {
+        "columnName": "created_by_user_id"
+      }
+    },
+    "timestampCreate": {
+      "type": "date",
+      "mysql": {
+        "columnName": "timestamp_create"
+      }
+    },
+    "timestampActivate": {
+      "type": "number",
+      "mysql": {
+        "columnName": "timestamp_activate"
+      }
+    },
+    "timestampDeactivate": {
+      "type": "number",
+      "mysql": {
+        "columnName": "timestamp_deactivate"
+      }
+    },
+    "roleId": {
+      "type": "number",
+      "mysql": {
+        "columnName": "role_id"
+      }
+    },
+    "personalDropboxAccessToken": {
+      "type": "string",
+      "mysql": {
+        "columnName": "personal_dropbox_access_token"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW"
+  }],
+  "methods": {
+    "syncAdmin": {
+      "isStatic": true,
+      "accepts": [{
+        "arg": "teamDropboxAccessToken",
+        "type": "string",
+        "required": true,
+        "description": "",
+        "http": {
+          "source": "query"
+        }
+      }],
+      "returns": [{
+        "arg": "status",
+        "type": "boolean",
+        "root": false,
+        "description": ""
+      }],
+      "description": "",
+      "http": [{
+        "path": "/syncAdmin",
+        "verb": "get"
+      }]
+    },
+    "syncUser": {
+      "isStatic": true,
+      "accepts": [{
+        "arg": "personalDropboxAccessToken",
+        "type": "string",
+        "required": true,
+        "description": "",
+        "http": {
+          "source": "query"
+        }
+      }, {
+        "arg": "userId",
+        "type": "number",
+        "required": true,
+        "description": "",
+        "http": {
+          "source": "query"
+        }
+      }, {
+        "arg": "userEmail",
+        "type": "string",
+        "required": true,
+        "description": "",
+        "http": {
+          "source": "query"
+        }
+      }],
+      "returns": [{
+        "arg": "status",
+        "type": "boolean",
+        "root": false,
+        "description": ""
+      }],
+      "description": "",
+      "http": [{
+        "path": "/syncUser",
+        "verb": "get"
+      }]
+    }
+  }
+}
