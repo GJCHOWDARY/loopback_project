@@ -6,7 +6,7 @@ Write a solution for the 'getMatterData' API.
 
 You will find a comment there --> //TODO: YOUR SOLUTION GOES HERE
 
-The goal is use the models provided to you on lines 27 - 31 so that the API responds with the data in the file 'sample-response.json'
+GOAL: use the models provided to you on lines 27 - 31 so that the API responds with the data in the file 'sample-response.json'
 
 You can use http://localhost:3000/explorer/#!/Matter/Matter_getMatterData for testing and enter matterId 1000
 

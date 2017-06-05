@@ -3,7 +3,6 @@ var boot = require('loopback-boot');
 var morgan = require('morgan');
 var http = require('http');
 var https = require('https');
-var sslConfig = require('../ssl-config.js');
 var logger = require('../helpers/logger').getLogger('server');
 
 var app = module.exports = loopback();
@@ -18,10 +17,7 @@ app.start = function(httpsMode) {
   var server = null;
   if (httpsMode) {
     //SSL configuration
-    var options = {
-      'key': sslConfig.privateKey,
-      'cert': sslConfig.certificate
-    };
+    var options = {};
     server = https.createServer(options, app);
   } else {
     server = http.createServer(app);
