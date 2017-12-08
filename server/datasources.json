@@ -3,9 +3,9 @@
     "host": "db-dev.flowace.in",
     "port": 3306,
     "database": "node_test",
-    "password": "Servzo3013",
+    "password": "NodeTest123",
     "name": "default",
-    "user": "lawzodbadmin",
+    "user": "node_test",
     "connector": "mysql"
   }
 }
