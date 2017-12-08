@@ -35,8 +35,7 @@
           "matterId": 1000,
           "text": "Hello",
           "createdByUserId": 2,
-          "entryTimestamp": "2017-06-05T20:11:35.000Z",
-          "createdByUser": "Elston B"
+          "entryTimestamp": "2017-01-01T00:00:00.000Z"
         }
       ]
     },
@@ -55,7 +54,7 @@
           "matterId": 1000,
           "text": "Test comment here",
           "createdByUserId": 2,
-          "entryTimestamp": "2017-06-05T20:11:43.000Z",
+          "entryTimestamp": "2017-01-01T00:00:00.000Z"
         },
         {
           "matterTaskCommentId": 39,
@@ -63,7 +62,7 @@
           "matterId": 1000,
           "text": "Another test comment",
           "createdByUserId": 2,
-          "entryTimestamp": "2017-06-05T20:11:50.000Z",
+          "entryTimestamp": "2017-01-01T00:00:00.000Z"
         }
       ]
     }

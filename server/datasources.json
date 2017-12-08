@@ -1,8 +1,8 @@
 {
   "default": {
-    "host": "db-dev.servzo.com",
+    "host": "db-dev.flowace.in",
     "port": 3306,
-    "database": "servzo",
+    "database": "node_test",
     "password": "Servzo3013",
     "name": "default",
     "user": "lawzodbadmin",

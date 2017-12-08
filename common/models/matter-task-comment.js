@@ -68,29 +68,7 @@ module.exports = function(MatterTaskComment) {
 
     MatterTaskComment.find(fieldsListMatterTaskComments)
       .then(function(MatterTaskComments) {
-        var commentsWithName = [];
-        var count = 0;
-
-        if (!MatterTaskComments.length) {
-          callback(null, commentsWithName);
-        }
-
-        MatterTaskComments.forEach(function(comment, index) {
-
-          attachNameToComment(comment)
-            .then(function(commentWithName) {
-              count++;
-              commentsWithName.push(commentWithName);
-              if (count === MatterTaskComments.length) {
-                callback(null, commentsWithName);
-              }
-            })
-            .catch(function(commentWithNameErr) {
-              callback(commentWithNameErr);
-            });
-
-        });
-
+        callback(null, MatterTaskComments);
       })
       .catch(function(MatterTaskCommentsErr) {
         callback(MatterTaskCommentsErr);

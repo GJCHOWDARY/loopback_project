@@ -36,9 +36,5 @@
   "Matter": {
     "dataSource": "default",
     "public": true
-  },
-  "ServzoUser": {
-    "dataSource": "default",
-    "public": true
   }
 }
